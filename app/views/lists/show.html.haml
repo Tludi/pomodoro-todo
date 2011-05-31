@@ -1,0 +1,28 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @list.name
+  .example_pane	
+    #countdown_dashboard
+ 
+      .dash.minutes_dash 
+        %span.dash_title m 
+        .digit 0 
+        .digit 0 
+        
+      .dash.seconds_dash 
+        %span.dash_title s
+        .digit 0 
+        .digit 0 
+				
+      .countdown_controls
+        =link_to_function (image_tag "play16.png" ), "start()", :id => "play", :class => "controls"
+        =link_to_function (image_tag "pause16.png" ), "stop()", :id => "pause", :class => "controls"
+        =link_to_function (image_tag "replay16.png" ), "reset()", :id => "replay", :class => "controls"
+          
+				
+
+= link_to 'Edit', edit_list_path(@list)
+\|
+= link_to 'Back', lists_path
